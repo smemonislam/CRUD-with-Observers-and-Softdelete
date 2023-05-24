@@ -20,8 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/posts/trashed', [PostController::class, 'trashed'])->name('posts.trashed');
-Route::get('/posts/restore/{post}', [PostController::class, 'restore'])->name('posts.restore');
-Route::delete('/posts/delete/{post}', [PostController::class, 'delete'])->name('posts.delete');
+Route::get('/posts/{post}/restore', [PostController::class, 'restore'])->name('posts.restore');
+Route::delete('/posts/{post}/delete', [PostController::class, 'delete'])->name('posts.delete');
 
 Route::resource('/posts', PostController::class);
 
